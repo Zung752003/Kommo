@@ -13,15 +13,18 @@
     "prettier:fix": "prettier --write \"src/**/(*.tsx|*.ts|*.css|*.scss)\""
   },
   "dependencies": {
+    "@floating-ui/react": "^0.27.16",
     "@hookform/resolvers": "^5.2.2",
     "@tailwindcss/line-clamp": "^0.4.4",
     "@tanstack/react-query": "4",
     "@tanstack/react-query-devtools": "4",
     "axios": "^1.13.2",
     "lodash": "^4.17.21",
+    "motion": "^12.23.24",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-hook-form": "^7.66.0",
+    "react-icons": "^5.5.0",
     "react-router-dom": "^7.9.5",
     "yup": "^1.7.1"
   },
