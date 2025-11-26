@@ -2,15 +2,15 @@ import { Link } from 'react-router-dom'
 import { FaCartPlus } from 'react-icons/fa'
 import Popover from '../Popover'
 import { useMutation } from '@tanstack/react-query'
-import { logout } from '../../apis/auth.api'
 import { useContext } from 'react'
 import { AppContext } from '../../contexts/app.context'
 import path from '../../constants/path'
+import authApi from '../../apis/auth.api'
 
 export default function Header() {
   const { setIsAuthenticated, isAuthenticated, setProfile, profile } = useContext(AppContext)
   const logoutMutation = useMutation({
-    mutationFn: logout,
+    mutationFn: authApi.logout,
     onSuccess: () => {
       setIsAuthenticated(false)
       setProfile(null)
@@ -112,7 +112,7 @@ export default function Header() {
         </div>
         <div className='grid grid-cols-12 gap-4 mt-4 items-end'>
           <Link to='/' className='col-span-2'>
-            <svg viewBox='175 90 550 200' className='h-14'>
+            <svg viewBox='175 90 550 200' className='h-12 w-full'>
               <g transform='translate(0.000000,400.000000) scale(0.100000,-0.100000)' fill='white' stroke='none'>
                 <path
                   d='M2310 3178 c-49 -13 -118 -89 -162 -178 -21 -42 -38 -82 -38 -90 0
