@@ -1,5 +1,3 @@
-import React from 'react'
-
 export default function ProductRating({ rating }: { rating: number }) {
   const handleWidth = (order: number) => {
     if (order <= rating) {
