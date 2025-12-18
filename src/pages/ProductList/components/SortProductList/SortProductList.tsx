@@ -1,10 +1,10 @@
 import classNames from 'classnames'
-import { sortBy, order as orderConstant } from '../../../constants/product'
-import { QueryConfig } from '../ProductList'
-import { ProductListConfig } from '../../../types/product.type'
 import { createSearchParams, Link, useNavigate } from 'react-router-dom'
-import path from '../../../constants/path'
 import { omit } from 'lodash'
+import { QueryConfig } from '../../ProductList'
+import { sortBy, order as orderConstant } from '../../../../constants/product'
+import { ProductListConfig } from '../../../../types/product.type'
+import path from '../../../../constants/path'
 
 interface Props {
   queryConfig: QueryConfig
@@ -21,7 +21,7 @@ export default function SortProductList({ queryConfig, pageSize }: Props) {
   }
 
   const handleSort = (sortByValue: Exclude<ProductListConfig['sort_by'], undefined>) => {
-    navigate({
+    void navigate({
       pathname: path.home,
       search: createSearchParams(
         omit(
@@ -36,7 +36,7 @@ export default function SortProductList({ queryConfig, pageSize }: Props) {
   }
 
   const handlePriceOrder = (orderValue: Exclude<ProductListConfig['order'], undefined>) => {
-    navigate({
+    void navigate({
       pathname: path.home,
       search: createSearchParams({
         ...queryConfig,
